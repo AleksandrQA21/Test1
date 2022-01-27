@@ -7,8 +7,6 @@ import java.util.Scanner;
 public class InitApp {
     public static void main(String[] args) {
 
-
-
         Login login = new Login();
         login.setLogin("Aleksandr");
         login.setPassword("1q2w3e4r");
