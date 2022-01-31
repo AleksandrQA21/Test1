@@ -9,13 +9,16 @@ public class Task1 {
 
     private int x;
 
-    public void inputData(){
+    public void inputData() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter your number: ");
         int number = sc.nextInt();
         evenNumber(number);
 
     }
+
+
+//    public static void validationInputNumber(int data){}
 
     public static void evenNumber(int num){
 
