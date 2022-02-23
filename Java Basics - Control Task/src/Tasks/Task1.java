@@ -18,8 +18,6 @@ public class Task1 {
     }
 
 
-//    public static void validationInputNumber(int data){}
-
     public static void evenNumber(int num){
 
         if(num % 2 == 0){

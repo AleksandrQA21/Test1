@@ -1,5 +1,6 @@
 package Login;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Login {
@@ -22,20 +23,23 @@ public class Login {
         this.password = password;
     }
 
-    public void inputLogin(){
+    public void inputLogin()  {
         Scanner sc =new Scanner(System.in);
         System.out.println("Please input your login:  ");
         String login = sc.nextLine();
 
         validationLogin(login);
     }
-
-    public void validationLogin(String str){
-        if(str.equals(login)){
-            System.out.println("Login is correct");
-        } else {
-            System.out.println("Login is incorrect");
-            System.exit(1);
+    //Добавил обработку исключения для логина с помощью try-catch
+    public void validationLogin(String str)  {
+        try {
+            if (!str.equals(login)) {
+                throw new Exception("Incorrect login");
+            }
+        }catch (Exception e){
+            System.out.println("Incorrect login is entered!");
+            e.printStackTrace();
+            System.exit(0);
         }
         inputPassword();
     }
@@ -47,12 +51,17 @@ public class Login {
         validationPassword(password);
 
     }
-    public void validationPassword(String pass) {
-        if (pass.equals(password)) {
-            System.out.println("Password is correct");
-        } else {
-            System.out.println("Password is incorrect");
-            System.exit(1);
+
+    //Добавил обработку исключения для пароля с помощью try-catch
+    public void validationPassword(String pass)  {
+        try {
+            if (!pass.equals(password)){
+                throw new Exception("Incorrect password");
+            }
+        }catch (Exception exception){
+            System.out.println("Incorrect password is entered!");
+            exception.printStackTrace();
+            System.exit(0);
         }
     }
 }
